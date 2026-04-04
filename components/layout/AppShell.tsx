@@ -3,12 +3,14 @@
 import { useState } from 'react'
 import Sidebar from './Sidebar'
 import StatusIndicator from './StatusIndicator'
+import NotificationBanner from '@/components/alerts/NotificationBanner'
 
 export default function AppShell({ children }: { children: React.ReactNode }) {
   const [sidebarOpen, setSidebarOpen] = useState(false)
 
   return (
     <div className="flex h-screen overflow-hidden">
+      <NotificationBanner />
       {/* Mobile backdrop */}
       {sidebarOpen && (
         <div
