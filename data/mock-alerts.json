@@ -1,0 +1,287 @@
+[
+  {
+    "id": "alert-001",
+    "severity": "urgent",
+    "category": "explicit_content",
+    "senderName": "Непознат Контакт",
+    "senderPhoto": "/icons/avatar-placeholder.png",
+    "childReplied": false,
+    "messagePreview": "Привет, ти си многу убава. Испратив ти нешто специјално, отвори го.",
+    "sourceApp": "Viber",
+    "sourceDevice": "android",
+    "timestamp": "2025-04-04T08:23:00.000Z",
+    "isFirstContact": true,
+    "thread": [
+      {
+        "sender": "Непознат Контакт",
+        "text": "Привет, ти си многу убава. Испратив ти нешто специјално, отвори го.",
+        "timestamp": "2025-04-04T08:23:00.000Z"
+      },
+      {
+        "sender": "Непознат Контакт",
+        "text": "[Слика прикачена]",
+        "timestamp": "2025-04-04T08:23:15.000Z"
+      }
+    ],
+    "read": false
+  },
+  {
+    "id": "alert-002",
+    "severity": "urgent",
+    "category": "self_harm",
+    "senderName": "Ана Петровиќ",
+    "senderPhoto": "/icons/avatar-placeholder.png",
+    "childReplied": true,
+    "messagePreview": "ne mogu vise ovako, sve je beskorisno, ne vidim smisao",
+    "sourceApp": "Instagram",
+    "sourceDevice": "android",
+    "timestamp": "2025-04-03T22:47:00.000Z",
+    "isFirstContact": false,
+    "thread": [
+      {
+        "sender": "Дина",
+        "text": "kaj si, dobro?",
+        "timestamp": "2025-04-03T22:41:00.000Z"
+      },
+      {
+        "sender": "Ана Петровиќ",
+        "text": "ne mogu vise ovako, sve je beskorisno, ne vidim smisao",
+        "timestamp": "2025-04-03T22:47:00.000Z"
+      },
+      {
+        "sender": "Дина",
+        "text": "sto se desilo? pricaj mi",
+        "timestamp": "2025-04-03T22:49:00.000Z"
+      },
+      {
+        "sender": "Ана Петровиќ",
+        "text": "nista, zaboravi",
+        "timestamp": "2025-04-03T22:51:00.000Z"
+      }
+    ],
+    "read": false
+  },
+  {
+    "id": "alert-003",
+    "severity": "warning",
+    "category": "stranger_contact",
+    "senderName": "Stefan_Beograd99",
+    "senderPhoto": "/icons/avatar-placeholder.png",
+    "childReplied": true,
+    "messagePreview": "hej, vidim da si iz Skoplja, ja sam iz Beograda, volim da upoznajem nove ljude",
+    "sourceApp": "Instagram",
+    "sourceDevice": "android",
+    "timestamp": "2025-04-04T11:05:00.000Z",
+    "isFirstContact": true,
+    "thread": [
+      {
+        "sender": "Stefan_Beograd99",
+        "text": "hej, vidim da si iz Skoplja, ja sam iz Beograda, volim da upoznajem nove ljude",
+        "timestamp": "2025-04-04T11:05:00.000Z"
+      },
+      {
+        "sender": "Дина",
+        "text": "zdravo",
+        "timestamp": "2025-04-04T11:08:00.000Z"
+      },
+      {
+        "sender": "Stefan_Beograd99",
+        "text": "koliko imas godina? izgledas jako zrelo za tvoje godine",
+        "timestamp": "2025-04-04T11:10:00.000Z"
+      }
+    ],
+    "read": false
+  },
+  {
+    "id": "alert-004",
+    "severity": "warning",
+    "category": "meeting_language",
+    "senderName": "Марко Илиески",
+    "senderPhoto": "/icons/avatar-placeholder.png",
+    "childReplied": true,
+    "messagePreview": "можеме да се сретнеме после училиште? знам едно место, никој нема да нè види",
+    "sourceApp": "Viber",
+    "sourceDevice": "android",
+    "timestamp": "2025-04-03T14:30:00.000Z",
+    "isFirstContact": false,
+    "thread": [
+      {
+        "sender": "Марко Илиески",
+        "text": "можеме да се сретнеме после училиште?",
+        "timestamp": "2025-04-03T14:28:00.000Z"
+      },
+      {
+        "sender": "Дина",
+        "text": "кога?",
+        "timestamp": "2025-04-03T14:29:00.000Z"
+      },
+      {
+        "sender": "Марко Илиески",
+        "text": "можеме да се сретнеме после училиште? знам едно место, никој нема да нè види",
+        "timestamp": "2025-04-03T14:30:00.000Z"
+      }
+    ],
+    "read": false
+  },
+  {
+    "id": "alert-005",
+    "severity": "warning",
+    "category": "flagged_video",
+    "senderName": "System",
+    "senderPhoto": "/icons/avatar-placeholder.png",
+    "childReplied": false,
+    "messagePreview": "Watched: 'How to make yourself disappear – no one will notice' (TikTok, 18 min)",
+    "sourceApp": "TikTok",
+    "sourceDevice": "android",
+    "timestamp": "2025-04-04T09:15:00.000Z",
+    "isFirstContact": false,
+    "thread": [
+      {
+        "sender": "System",
+        "text": "Watched: 'How to make yourself disappear – no one will notice' (TikTok, 18 min)",
+        "timestamp": "2025-04-04T09:15:00.000Z"
+      },
+      {
+        "sender": "System",
+        "text": "Watched: 'Things people don't say before they leave' (TikTok, 12 min)",
+        "timestamp": "2025-04-04T09:34:00.000Z"
+      }
+    ],
+    "read": true
+  },
+  {
+    "id": "alert-006",
+    "severity": "warning",
+    "category": "stranger_contact",
+    "senderName": "gamer_xXx_dark",
+    "senderPhoto": "/icons/avatar-placeholder.png",
+    "childReplied": false,
+    "messagePreview": "Hey, I found your profile from TikTok. You look really cool. Want to voice chat sometime?",
+    "sourceApp": "Discord",
+    "sourceDevice": "pc",
+    "timestamp": "2025-04-02T19:55:00.000Z",
+    "isFirstContact": true,
+    "thread": [
+      {
+        "sender": "gamer_xXx_dark",
+        "text": "Hey, I found your profile from TikTok. You look really cool. Want to voice chat sometime?",
+        "timestamp": "2025-04-02T19:55:00.000Z"
+      },
+      {
+        "sender": "gamer_xXx_dark",
+        "text": "I'm 16 btw, just so you know I'm not some creep lol",
+        "timestamp": "2025-04-02T20:02:00.000Z"
+      }
+    ],
+    "read": true
+  },
+  {
+    "id": "alert-007",
+    "severity": "urgent",
+    "category": "explicit_content",
+    "senderName": "Непознат",
+    "senderPhoto": "/icons/avatar-placeholder.png",
+    "childReplied": false,
+    "messagePreview": "Пратив ти линк, погледај кога ќе бидеш сама. Не кажувај на никој.",
+    "sourceApp": "Snapchat",
+    "sourceDevice": "android",
+    "timestamp": "2025-04-01T21:10:00.000Z",
+    "isFirstContact": true,
+    "thread": [
+      {
+        "sender": "Непознат",
+        "text": "Пратив ти линк, погледај кога ќе бидеш сама. Не кажувај на никој.",
+        "timestamp": "2025-04-01T21:10:00.000Z"
+      }
+    ],
+    "read": true
+  },
+  {
+    "id": "alert-008",
+    "severity": "warning",
+    "category": "meeting_language",
+    "senderName": "TechSupport_Official",
+    "senderPhoto": "/icons/avatar-placeholder.png",
+    "childReplied": false,
+    "messagePreview": "Your account has been selected for a special prize. Meet our representative at the mall to collect it.",
+    "sourceApp": "WhatsApp",
+    "sourceDevice": "pc",
+    "timestamp": "2025-04-03T10:20:00.000Z",
+    "isFirstContact": true,
+    "thread": [
+      {
+        "sender": "TechSupport_Official",
+        "text": "Your account has been selected for a special prize. Meet our representative at the mall to collect it.",
+        "timestamp": "2025-04-03T10:20:00.000Z"
+      },
+      {
+        "sender": "TechSupport_Official",
+        "text": "This offer expires today. Please confirm your attendance.",
+        "timestamp": "2025-04-03T10:45:00.000Z"
+      }
+    ],
+    "read": true
+  },
+  {
+    "id": "alert-009",
+    "severity": "warning",
+    "category": "flagged_video",
+    "senderName": "System",
+    "senderPhoto": "/icons/avatar-placeholder.png",
+    "childReplied": false,
+    "messagePreview": "Searched: 'kako smrsati za 3 dana bez jela' (YouTube, 3 searches in 20 min)",
+    "sourceApp": "YouTube",
+    "sourceDevice": "pc",
+    "timestamp": "2025-04-04T07:45:00.000Z",
+    "isFirstContact": false,
+    "thread": [
+      {
+        "sender": "System",
+        "text": "Searched: 'kako smrsati za 3 dana bez jela'",
+        "timestamp": "2025-04-04T07:45:00.000Z"
+      },
+      {
+        "sender": "System",
+        "text": "Searched: 'extreme diet results'",
+        "timestamp": "2025-04-04T07:52:00.000Z"
+      },
+      {
+        "sender": "System",
+        "text": "Watched: 'I ate 500 calories a day for a week – here's what happened' (22 min)",
+        "timestamp": "2025-04-04T07:58:00.000Z"
+      }
+    ],
+    "read": false
+  },
+  {
+    "id": "alert-010",
+    "severity": "warning",
+    "category": "stranger_contact",
+    "senderName": "Kristian_MK",
+    "senderPhoto": "/icons/avatar-placeholder.png",
+    "childReplied": true,
+    "messagePreview": "baš si slatka na onim slikama. dali bi mi mogla poslati jos neku?",
+    "sourceApp": "Instagram",
+    "sourceDevice": "android",
+    "timestamp": "2025-04-04T13:40:00.000Z",
+    "isFirstContact": false,
+    "thread": [
+      {
+        "sender": "Kristian_MK",
+        "text": "baš si slatka na onim slikama. dali bi mi mogla poslati jos neku?",
+        "timestamp": "2025-04-04T13:40:00.000Z"
+      },
+      {
+        "sender": "Дина",
+        "text": "koje slike?",
+        "timestamp": "2025-04-04T13:42:00.000Z"
+      },
+      {
+        "sender": "Kristian_MK",
+        "text": "ove sto si stavila u storiju. moze neka privatna?",
+        "timestamp": "2025-04-04T13:44:00.000Z"
+      }
+    ],
+    "read": false
+  }
+]
