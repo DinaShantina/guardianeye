@@ -11,15 +11,14 @@ export default function PushConfig() {
   const [testResult, setTestResult] = useState<string | null>(null)
 
   useEffect(() => {
-    // Check if we already have a subscription stored
+    // Compute initial status once and set it in a single call
     const stored = localStorage.getItem(STORAGE_KEY)
-    if (stored) {
-      setStatus('active')
-    } else if (Notification.permission === 'denied') {
-      setStatus('denied')
-    } else {
-      setStatus('not_subscribed')
-    }
+    const initial: SubscriptionStatus = stored
+      ? 'active'
+      : Notification.permission === 'denied'
+        ? 'denied'
+        : 'not_subscribed'
+    setStatus(initial)
   }, [])
 
   async function enableNotifications() {

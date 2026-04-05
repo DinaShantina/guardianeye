@@ -14,6 +14,7 @@ const navItems = [
   { href: '/alerts', label: 'Alerts' },
   { href: '/report', label: 'Report' },
   { href: '/settings', label: 'Settings' },
+  { href: '/simulate', label: 'Simulator' },
 ]
 
 export default function Sidebar({ open, onClose }: SidebarProps) {
