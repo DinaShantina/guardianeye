@@ -12,12 +12,6 @@ export default function SimulatePage() {
         </p>
       </div>
 
-      <div className="bg-zinc-800/40 border border-zinc-700 rounded-xl p-1 mb-6">
-        <p className="text-xs text-zinc-500 px-3 py-2">
-          API route connects in step 10 — buttons will 404 until then. Check DevTools → Network to
-          confirm the fetch fires.
-        </p>
-      </div>
 
       <EventButtons />
     </div>
