@@ -18,8 +18,8 @@ export const metadata: Metadata = {
   title: "GuardianEye",
   description: "Real-time child safety alerts for parents",
   icons: {
-    icon: "/logo.svg",
-    apple: "/logo.svg",
+    icon: "/favicon.svg",
+    apple: "/favicon.svg",
   },
 };
 
