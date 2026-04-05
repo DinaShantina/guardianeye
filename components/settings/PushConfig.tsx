@@ -1,25 +1,38 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useSyncExternalStore } from 'react'
 
 const STORAGE_KEY = 'guardianeyePushSub'
+// Custom event dispatched whenever push status changes (same-tab localStorage writes
+// don't fire the native 'storage' event, so we use our own)
+const PUSH_STATUS_EVENT = 'guardianeye-push-status'
 
-type SubscriptionStatus = 'checking' | 'not_subscribed' | 'active' | 'denied'
+type SubscriptionStatus = 'not_subscribed' | 'active' | 'denied'
+
+function subscribe(callback: () => void) {
+  window.addEventListener(PUSH_STATUS_EVENT, callback)
+  return () => window.removeEventListener(PUSH_STATUS_EVENT, callback)
+}
+
+function getSnapshot(): SubscriptionStatus {
+  if (localStorage.getItem(STORAGE_KEY)) return 'active'
+  if (Notification.permission === 'denied') return 'denied'
+  return 'not_subscribed'
+}
+
+function getServerSnapshot(): SubscriptionStatus {
+  return 'not_subscribed'
+}
+
+function notifyChanged() {
+  window.dispatchEvent(new Event(PUSH_STATUS_EVENT))
+}
 
 export default function PushConfig() {
-  const [status, setStatus] = useState<SubscriptionStatus>('checking')
+  // useSyncExternalStore reads browser APIs during render with no effect needed.
+  // getServerSnapshot handles SSR; getSnapshot runs client-side only.
+  const status = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot)
   const [testResult, setTestResult] = useState<string | null>(null)
-
-  useEffect(() => {
-    // Compute initial status once and set it in a single call
-    const stored = localStorage.getItem(STORAGE_KEY)
-    const initial: SubscriptionStatus = stored
-      ? 'active'
-      : Notification.permission === 'denied'
-        ? 'denied'
-        : 'not_subscribed'
-    setStatus(initial)
-  }, [])
 
   async function enableNotifications() {
     const vapidPublicKey = process.env.NEXT_PUBLIC_VAPID_PUBLIC_KEY
@@ -30,7 +43,7 @@ export default function PushConfig() {
 
     const permission = await Notification.requestPermission()
     if (permission !== 'granted') {
-      setStatus('denied')
+      notifyChanged() // re-reads Notification.permission, returns 'denied'
       return
     }
 
@@ -42,6 +55,7 @@ export default function PushConfig() {
       })
 
       localStorage.setItem(STORAGE_KEY, JSON.stringify(subscription))
+      notifyChanged() // re-reads localStorage, returns 'active'
 
       // TODO: wire to real endpoint in step 10
       // await fetch('/api/push/subscribe', {
@@ -49,11 +63,9 @@ export default function PushConfig() {
       //   headers: { 'Content-Type': 'application/json' },
       //   body: JSON.stringify(subscription),
       // })
-
-      setStatus('active')
     } catch (err) {
       console.error('Push subscribe failed:', err)
-      setStatus('not_subscribed')
+      // status stays 'not_subscribed' — nothing written to localStorage
     }
   }
 
@@ -87,7 +99,6 @@ export default function PushConfig() {
           ].join(' ')}
         />
         <span className="text-sm text-zinc-700 dark:text-zinc-300">
-          {status === 'checking' && 'Checking…'}
           {status === 'not_subscribed' && 'Not subscribed'}
           {status === 'active' && 'Active — notifications enabled'}
           {status === 'denied' && 'Blocked — notifications denied in browser'}
@@ -116,7 +127,8 @@ export default function PushConfig() {
 
         {status === 'denied' && (
           <p className="text-xs text-red-500">
-            Notifications are blocked. Open browser settings and allow notifications for this site, then reload.
+            Notifications are blocked. Open browser settings and allow notifications for this site,
+            then reload.
           </p>
         )}
       </div>
