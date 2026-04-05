@@ -168,7 +168,6 @@ export default function EventButtons() {
     setToast(null)
 
     try {
-      // TODO: Step 10 — /api/events route created here; this will succeed once it exists
       const res = await fetch('/api/events', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -178,7 +177,7 @@ export default function EventButtons() {
       if (res.ok) {
         setToast({ message: `Fired: ${config.label}`, ok: true })
       } else {
-        setToast({ message: `Sent (API not connected yet — step 10)`, ok: false })
+        setToast({ message: `Failed to send event`, ok: false })
       }
     } catch {
       setToast({ message: `Sent (API not connected yet — step 10)`, ok: false })
