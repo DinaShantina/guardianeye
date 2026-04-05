@@ -36,8 +36,20 @@ export default function Sidebar({ open, onClose }: SidebarProps) {
         <Link
           href="/"
           onClick={onClose}
-          className="text-base font-semibold text-zinc-900 dark:text-white"
+          className="flex items-center gap-2 text-base font-semibold text-zinc-900 dark:text-white"
         >
+          {/* GuardianEye logo mark */}
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none" width="32" height="32" style={{flexShrink: 0}}>
+            <rect width="200" height="200" rx="32" fill="#0a0a0a"/>
+            <path d="M100 24 L160 48 L160 104 C160 140 132 168 100 180 C68 168 40 140 40 104 L40 48 Z"
+              stroke="#22c55e" strokeWidth="3" strokeLinejoin="round"/>
+            <path d="M58 100 C70 78 130 78 142 100 C130 122 70 122 58 100 Z"
+              stroke="#22c55e" strokeWidth="2.5"/>
+            <circle cx="100" cy="100" r="14" stroke="#22c55e" strokeWidth="2.5"/>
+            <circle cx="100" cy="100" r="5" fill="#22c55e"/>
+            <line x1="58" y1="100" x2="84" y2="100" stroke="#22c55e" strokeWidth="1.5" strokeOpacity="0.4"/>
+            <line x1="116" y1="100" x2="142" y2="100" stroke="#22c55e" strokeWidth="1.5" strokeOpacity="0.4"/>
+          </svg>
           GuardianEye
         </Link>
         {/* Close button — mobile only */}
