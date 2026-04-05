@@ -1,37 +1,10 @@
 'use client'
 
-import React, { createContext, useContext, useEffect, useState } from 'react'
+import React, { createContext, useCallback, useContext, useEffect, useRef, useState } from 'react'
 import mockAlerts from '@/data/mock-alerts.json'
+import type { AlertEvent, AlertSeverity, AlertCategory, MessageThread } from '@/lib/types'
 
-export type AlertSeverity = 'urgent' | 'warning'
-export type AlertCategory =
-  | 'explicit_content'
-  | 'stranger_contact'
-  | 'self_harm'
-  | 'meeting_language'
-  | 'flagged_video'
-
-export type MessageThread = {
-  sender: string
-  text: string
-  timestamp: string
-}
-
-export type AlertEvent = {
-  id: string
-  severity: AlertSeverity
-  category: AlertCategory
-  senderName: string
-  senderPhoto: string
-  childReplied: boolean
-  messagePreview: string
-  sourceApp: string
-  sourceDevice: 'android' | 'pc'
-  timestamp: string
-  isFirstContact: boolean
-  thread: MessageThread[]
-  read: boolean
-}
+export type { AlertEvent, AlertSeverity, AlertCategory, MessageThread }
 
 type AlertsContextType = {
   alerts: AlertEvent[]
@@ -72,9 +45,9 @@ export function AlertsProvider({ children }: { children: React.ReactNode }) {
     }
   }, [])
 
-  const addAlert = (alert: AlertEvent) => {
+  const addAlert = useCallback((alert: AlertEvent) => {
     setAlerts((prev) => [alert, ...prev])
-  }
+  }, [])
 
   const markRead = (id: string) => {
     setAlerts((prev) =>
@@ -87,6 +60,26 @@ export function AlertsProvider({ children }: { children: React.ReactNode }) {
       saveReadIds([...readIds, id])
     }
   }
+
+  // Poll for new events from the simulator every 3 seconds
+  const lastPolledRef = useRef(Date.now())
+  useEffect(() => {
+    const poll = async () => {
+      try {
+        const res = await fetch(`/api/events?since=${lastPolledRef.current}`)
+        if (!res.ok) return
+        const newEvents: AlertEvent[] = await res.json()
+        lastPolledRef.current = Date.now()
+        for (const event of newEvents) {
+          addAlert(event)
+        }
+      } catch {
+        // Network errors during polling — ignore silently
+      }
+    }
+    const id = setInterval(poll, 3000)
+    return () => clearInterval(id)
+  }, [addAlert])
 
   const unreadCount = alerts.filter((a) => !a.read).length
 

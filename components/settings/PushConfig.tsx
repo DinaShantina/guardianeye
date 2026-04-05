@@ -57,12 +57,11 @@ export default function PushConfig() {
       localStorage.setItem(STORAGE_KEY, JSON.stringify(subscription))
       notifyChanged() // re-reads localStorage, returns 'active'
 
-      // TODO: wire to real endpoint in step 10
-      // await fetch('/api/push/subscribe', {
-      //   method: 'POST',
-      //   headers: { 'Content-Type': 'application/json' },
-      //   body: JSON.stringify(subscription),
-      // })
+      await fetch('/api/push/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(subscription),
+      })
     } catch (err) {
       console.error('Push subscribe failed:', err)
       // status stays 'not_subscribed' — nothing written to localStorage
@@ -71,14 +70,22 @@ export default function PushConfig() {
 
   async function sendTestNotification() {
     setTestResult(null)
-    // TODO: wire to real endpoint in step 10
-    // await fetch('/api/push/send', {
-    //   method: 'POST',
-    //   headers: { 'Content-Type': 'application/json' },
-    //   body: JSON.stringify({ title: 'Test notification', body: 'GuardianEye is working.' }),
-    // })
-    setTestResult('Test notification sent (API not wired yet — coming in step 10).')
-    setTimeout(() => setTestResult(null), 4000)
+    try {
+      const res = await fetch('/api/push/send', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ title: 'GuardianEye test', body: 'Push notifications are working.' }),
+      })
+      if (res.ok) {
+        setTestResult('Test notification sent.')
+      } else {
+        const { error } = await res.json()
+        setTestResult(`Failed: ${error}`)
+      }
+    } catch {
+      setTestResult('Network error — is the dev server running?')
+    }
+    setTimeout(() => setTestResult(null), 5000)
   }
 
   return (
