@@ -1,7 +1,6 @@
 'use client'
 
 import { use, useEffect } from 'react'
-import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { useAlerts } from '@/lib/alerts-store'
 import ConversationThread from '@/components/detail/ConversationThread'
@@ -53,12 +52,12 @@ export default function AlertDetailPage({ params }: PageProps) {
     return (
       <div className="max-w-2xl mx-auto px-4 py-12 text-center">
         <p className="text-zinc-500 dark:text-zinc-400 mb-4">Alert not found.</p>
-        <Link
-          href="/alerts"
+        <button
+          onClick={() => router.back()}
           className="text-sm text-blue-500 hover:underline"
         >
-          ← Back to alerts
-        </Link>
+          ← Go back
+        </button>
       </div>
     )
   }
@@ -70,16 +69,16 @@ export default function AlertDetailPage({ params }: PageProps) {
 
   return (
     <div className="max-w-2xl mx-auto px-4 py-6">
-      {/* Back button */}
-      <Link
-        href="/alerts"
-        className="inline-flex items-center gap-1.5 text-sm text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors mb-5"
+      {/* Back button — uses browser history so it works from both /alerts and /report */}
+      <button
+        onClick={() => router.back()}
+        className="inline-flex items-center gap-1 text-xs text-zinc-400 dark:text-zinc-500 hover:text-zinc-700 dark:hover:text-zinc-300 transition-colors mb-4"
       >
-        <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
           <path d="M15 18l-6-6 6-6" />
         </svg>
-        Back to alerts
-      </Link>
+        Back
+      </button>
 
       {/* Alert type badge */}
       <div className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wide border mb-4 ${severityColor}`}>
