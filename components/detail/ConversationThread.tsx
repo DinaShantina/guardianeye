@@ -29,15 +29,15 @@ export default function ConversationThread({ thread, childName = 'Дина' }: C
     )
   }
 
-  // Group by date for date separators
-  let lastDate = ''
+  // Precompute which messages need a date separator (no mutation during render)
+  const dateLabels = thread.map((msg) => formatDate(msg.timestamp))
+  const showDateSeparator = dateLabels.map((label, i) => i === 0 || label !== dateLabels[i - 1])
 
   return (
     <div className="space-y-1">
       {thread.map((msg, i) => {
-        const dateLabel = formatDate(msg.timestamp)
-        const showDate = dateLabel !== lastDate
-        lastDate = dateLabel
+        const dateLabel = dateLabels[i]
+        const showDate = showDateSeparator[i]
         const isChild = msg.sender === childName
 
         return (
