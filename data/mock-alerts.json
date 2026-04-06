@@ -283,5 +283,186 @@
       }
     ],
     "read": false
+  },
+  {
+    "id": "alert-011",
+    "severity": "warning",
+    "category": "stranger_contact",
+    "senderName": "Darko_Skopje",
+    "senderPhoto": "/icons/avatar-placeholder.png",
+    "childReplied": true,
+    "messagePreview": "Zdravo, te vidov na TikTok, mnogu ubavo igrash. Odakle si?",
+    "sourceApp": "TikTok",
+    "sourceDevice": "android",
+    "timestamp": "2025-04-05T15:10:00.000Z",
+    "isFirstContact": true,
+    "thread": [
+      {
+        "sender": "Darko_Skopje",
+        "text": "Zdravo, te vidov na TikTok, mnogu ubavo igrash. Odakle si?",
+        "timestamp": "2025-04-05T15:10:00.000Z"
+      },
+      {
+        "sender": "Дина",
+        "text": "od Skopje sum, zosto prashuvash?",
+        "timestamp": "2025-04-05T15:13:00.000Z"
+      },
+      {
+        "sender": "Darko_Skopje",
+        "text": "samo sakam da se zapoznaeme. kolku godini imas? jas sum 24.",
+        "timestamp": "2025-04-05T15:15:00.000Z"
+      }
+    ],
+    "read": false
+  },
+  {
+    "id": "alert-012",
+    "severity": "urgent",
+    "category": "self_harm",
+    "senderName": "Viktorija M.",
+    "senderPhoto": "/icons/avatar-placeholder.png",
+    "childReplied": true,
+    "messagePreview": "ne sakam poveke da odam na uciliste, site me mrazat, nema smisla nisto",
+    "sourceApp": "Viber",
+    "sourceDevice": "android",
+    "timestamp": "2025-04-05T21:30:00.000Z",
+    "isFirstContact": false,
+    "thread": [
+      {
+        "sender": "Дина",
+        "text": "kako si denes?",
+        "timestamp": "2025-04-05T21:25:00.000Z"
+      },
+      {
+        "sender": "Viktorija M.",
+        "text": "ne sakam poveke da odam na uciliste, site me mrazat, nema smisla nisto",
+        "timestamp": "2025-04-05T21:30:00.000Z"
+      },
+      {
+        "sender": "Дина",
+        "text": "sto se sluci? pricaj mi",
+        "timestamp": "2025-04-05T21:32:00.000Z"
+      },
+      {
+        "sender": "Viktorija M.",
+        "text": "zaboravi, ionaka nemas da razberes",
+        "timestamp": "2025-04-05T21:34:00.000Z"
+      }
+    ],
+    "read": false
+  },
+  {
+    "id": "alert-013",
+    "severity": "warning",
+    "category": "meeting_language",
+    "senderName": "Bojan_MK",
+    "senderPhoto": "/icons/avatar-placeholder.png",
+    "childReplied": true,
+    "messagePreview": "ajde sretneme se vo centarot, ne kazuvaj na mama i tato, ke bide iznenaduvanje",
+    "sourceApp": "Snapchat",
+    "sourceDevice": "android",
+    "timestamp": "2025-04-04T16:45:00.000Z",
+    "isFirstContact": false,
+    "thread": [
+      {
+        "sender": "Bojan_MK",
+        "text": "ajde sretneme se vo centarot popladne",
+        "timestamp": "2025-04-04T16:43:00.000Z"
+      },
+      {
+        "sender": "Дина",
+        "text": "ne znam dali mozam",
+        "timestamp": "2025-04-04T16:44:00.000Z"
+      },
+      {
+        "sender": "Bojan_MK",
+        "text": "ajde sretneme se vo centarot, ne kazuvaj na mama i tato, ke bide iznenaduvanje",
+        "timestamp": "2025-04-04T16:45:00.000Z"
+      }
+    ],
+    "read": true
+  },
+  {
+    "id": "alert-014",
+    "severity": "warning",
+    "category": "flagged_video",
+    "senderName": "System",
+    "senderPhoto": "/icons/avatar-placeholder.png",
+    "childReplied": false,
+    "messagePreview": "Searched: 'kako da izgledash potanka za edna nedela' (3 searches, 35 min)",
+    "sourceApp": "YouTube",
+    "sourceDevice": "android",
+    "timestamp": "2025-04-05T08:20:00.000Z",
+    "isFirstContact": false,
+    "thread": [
+      {
+        "sender": "System",
+        "text": "Searched: 'kako da izgledash potanka za edna nedela'",
+        "timestamp": "2025-04-05T08:20:00.000Z"
+      },
+      {
+        "sender": "System",
+        "text": "Searched: 'deca koi ne jadat nisto'",
+        "timestamp": "2025-04-05T08:28:00.000Z"
+      },
+      {
+        "sender": "System",
+        "text": "Watched: 'What I eat in a day – 800 calories' (17 min)",
+        "timestamp": "2025-04-05T08:35:00.000Z"
+      }
+    ],
+    "read": false
+  },
+  {
+    "id": "alert-015",
+    "severity": "warning",
+    "category": "stranger_contact",
+    "senderName": "unknown_user_882",
+    "senderPhoto": "/icons/avatar-placeholder.png",
+    "childReplied": false,
+    "messagePreview": "Hey, I saw your video and you're really talented. I work with young creators — DM me.",
+    "sourceApp": "Instagram",
+    "sourceDevice": "pc",
+    "timestamp": "2025-04-03T18:05:00.000Z",
+    "isFirstContact": true,
+    "thread": [
+      {
+        "sender": "unknown_user_882",
+        "text": "Hey, I saw your video and you're really talented. I work with young creators — DM me.",
+        "timestamp": "2025-04-03T18:05:00.000Z"
+      },
+      {
+        "sender": "unknown_user_882",
+        "text": "We can help you grow your account fast. Just need your phone number to get started.",
+        "timestamp": "2025-04-03T18:12:00.000Z"
+      }
+    ],
+    "read": true
+  },
+  {
+    "id": "alert-016",
+    "severity": "urgent",
+    "category": "explicit_content",
+    "senderName": "RandomUser404",
+    "senderPhoto": "/icons/avatar-placeholder.png",
+    "childReplied": false,
+    "messagePreview": "Check this out, don't show anyone. Open it when you're alone.",
+    "sourceApp": "Discord",
+    "sourceDevice": "pc",
+    "timestamp": "2025-04-02T23:15:00.000Z",
+    "isFirstContact": true,
+    "thread": [
+      {
+        "sender": "RandomUser404",
+        "text": "Check this out, don't show anyone. Open it when you're alone.",
+        "timestamp": "2025-04-02T23:15:00.000Z"
+      },
+      {
+        "sender": "RandomUser404",
+        "text": "[Link attached]",
+        "timestamp": "2025-04-02T23:15:30.000Z"
+      }
+    ],
+    "read": true
   }
 ]
